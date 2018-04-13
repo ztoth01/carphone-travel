@@ -1,0 +1,118 @@
+.header {
+	padding: 0;
+	position: fixed;
+	top:0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	background: $white url($path-image + 'country-grid-bg.png') repeat;
+	
+	.hamburger {
+		position: absolute;
+		right: 10px;
+		top: 2px;
+		z-index: 100;
+		
+		@include media($lg) {
+			right: 20px;
+			top: 20px;
+		}
+	}
+	
+	.header-nav {
+		
+		&__back-home {
+			display: block;
+			position: absolute;
+			top: 28px;
+			font-size: 15px;
+			line-height: 22px;
+			color: $mariner;
+			background: url($path-image + 'back-home-arrow.svg') no-repeat;
+			background-size: 22px 12px;
+			background-position: left 5px;
+			padding-left: 35px;
+			height: 28px;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+
+		.row {
+			padding-top: 65px;
+			padding-bottom: 26px;
+			
+			@include media($lg) {
+				padding-top: 108px;
+				padding-bottom: 58px;
+			}
+		}
+		
+		.header-nav-list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			height: calc(100vh - 48px - 65px);
+			overflow-y: scroll;
+			
+			@include media($sm) {
+				columns: 2;
+			  -webkit-columns: 2;
+			  -moz-columns: 2;
+			}
+			
+			@include media($sm) {
+				height: auto;
+				overflow-y: auto;
+			}
+			
+			.nav-item {
+				display: block;
+				
+				.nav-link {
+					font-size: 20px;
+					line-height: 38px;
+					color: $black;
+					text-transform: uppercase;
+					text-decoration: none;
+					position: relative;
+					padding-left: 0;
+					padding-right: 0;
+					
+					@include media($lg) {
+						font-size: 24px;
+						line-height: 40px;
+					}
+					
+					&:after {
+						content: ' ';
+						position: absolute;
+						width: 165px;
+						height: 6px;
+						background: transparent;
+						bottom: 0;
+						left: 0;
+						
+						@include base-transition();
+					}
+				}
+				
+				&.active .nav-link,
+				.nav-link:hover {
+					
+					&:after {
+						background: $mariner;
+					}
+				}
+			}
+		}
+		
+		&__img {
+			width: 100%;
+			max-width: 506px;
+			height: 260px;
+			background-size: cover;
+			background-position: center center;
+			margin-top: 13px;
+		}
+	}
+}

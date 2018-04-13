@@ -1,0 +1,50 @@
+/* Fonts -------------------- */
+
+@font-face {
+    font-family: 'Trueno';
+    src: url($path-fonts + 'TruenoRg.eot');
+    src: url($path-fonts + 'TruenoRg.eot?#iefix') format('embedded-opentype'),
+        url($path-fonts + 'TruenoRg.woff2') format('woff2'),
+        url($path-fonts + 'TruenoRg.woff') format('woff'),
+        url($path-fonts + 'TruenoRg.ttf') format('truetype'),
+        url($path-fonts + 'TruenoRg.svg#TruenoRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url($path-fonts + 'TruenoLt.eot');
+    src: url($path-fonts + 'TruenoLt.eot?#iefix') format('embedded-opentype'),
+        url($path-fonts + 'TruenoLt.woff2') format('woff2'),
+        url($path-fonts + 'TruenoLt.woff') format('woff'),
+        url($path-fonts + 'TruenoLt.ttf') format('truetype'),
+        url($path-fonts + 'TruenoLt.svg#TruenoLt') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url($path-fonts + 'TruenoSBd.eot');
+    src: url($path-fonts + 'TruenoSBd.eot?#iefix') format('embedded-opentype'),
+        url($path-fonts + 'TruenoSBd.woff2') format('woff2'),
+        url($path-fonts + 'TruenoSBd.woff') format('woff'),
+        url($path-fonts + 'TruenoSBd.ttf') format('truetype'),
+        url($path-fonts + 'TruenoSBd.svg#TruenoSBd') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Trueno';
+    src: url($path-fonts + 'TruenoRgIt.eot');
+    src: url($path-fonts + 'TruenoRgIt.eot?#iefix') format('embedded-opentype'),
+        url($path-fonts + 'TruenoRgIt.woff2') format('woff2'),
+        url($path-fonts + 'TruenoRgIt.woff') format('woff'),
+        url($path-fonts + 'TruenoRgIt.ttf') format('truetype'),
+        url($path-fonts + 'TruenoRgIt.svg#TruenoRgIt') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+

@@ -1,0 +1,56 @@
+/*************************************************************
+/
+/  Buttons
+/
+/*************************************************************/
+
+.btn {
+	@include button-reset();
+	
+	
+	
+	&:active, &:not([disabled]):not(.disabled).active {
+		box-shadow: none;
+	}
+	
+	// Button Mixins
+	//---------------------------------
+	
+	@mixin btn-primary {
+		border-radius: 25px;
+		border: 1px solid $mariner;
+		background: $mariner;
+		color: $white;
+		padding: 12px;
+		min-width: 210px;
+		text-align: center;
+		font-size: 15px;
+		line-height: 25px;
+		font-weight: 400;
+		letter-spacing: 0.1px;
+	}
+	
+	@mixin btn-primary--hover {
+
+		border-color: darken($mariner, 8%);
+		background: darken($mariner, 8%);
+	}
+	
+	
+	
+	
+	//---------------------------------
+	
+	
+	
+	// Button Classes
+	//---------------------------------
+	&-primary {
+		@include btn-primary();
+
+		&:hover, &:focus, &:not([disabled]):not(.disabled):active, &--active {
+			@include btn-primary--hover();
+		}
+	}
+}
+

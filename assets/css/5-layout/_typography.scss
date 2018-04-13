@@ -1,0 +1,167 @@
+// START: Heading
+// ================================
+._heading {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	
+	&--1 {
+		font-size: 40px;
+		font-weight: 600;
+		line-height: 42px;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+		
+		@include media($lg) {
+			font-size: 79px;
+			line-height: 82px;
+			margin-bottom: 0;
+		}
+	}
+	
+	&--2 {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 22px;
+		text-transform: uppercase;
+		
+		@include media($lg) {
+			font-size: 20px;
+			line-height: 32px;
+		}
+	}
+	
+	&--3 {
+		font-size: 26px;
+		font-weight: 600;
+		line-height: 24px;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		margin-top: 7px;
+		
+		@include media($lg) {
+			font-size: 33px;
+			line-height: 30px;
+			margin-top: 0;
+		}
+	}
+	
+	
+	&--4 {
+		font-size: 28px;
+		line-height: 34px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		margin-bottom: 43px;
+		
+		@include media($lg) {
+			font-size: 36px;
+			line-height: 42px;
+			margin-bottom: 82px;
+		}
+	}
+	
+	&--5 {
+		font-size: 26px;
+		font-weight: 600;
+		line-height: 24px;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		padding-bottom: 16px;
+		margin-bottom: 20px;
+		
+		@include media($lg) {
+			font-size: 33px;
+			line-height: 30px;
+			padding-bottom: 22px;
+		}
+		
+		&:after {
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 5px;
+			background: $purple;
+			width: 60px;
+		}
+	}
+	
+	
+	
+	&--border-bottom {
+		padding-bottom: 9px;
+		
+		@include media($lg) {
+			padding-bottom: 11px;
+		}
+		
+		&:after {
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			max-width: 160px;
+			width: 100%;
+			height: 2px;
+			background: $white;
+			@include transform(translateX(-50%));
+			left: 50%;
+			
+			@include media($lg) {
+				max-width: 360px;
+			}
+			
+		}
+	}
+	
+}
+// END: Heading
+// ================================
+
+
+
+p {
+	font-size: 13px;
+	line-height: 22px;
+	letter-spacing: 0.15px;
+	
+	@include media($lg) {
+		font-size: 15px;
+		line-height: 25px;
+	}
+	
+	&.lead {
+		font-size: 19px;
+		line-height: 30px;
+		letter-spacing: 0;
+		margin-bottom: 25px;
+			
+		@include media($lg) {
+			font-size: 21px;
+			line-height: 33px;
+		}
+	}
+	
+	&.size-2 {
+		font-size: 15px;
+		line-height: 26px;
+		letter-spacing: 0;
+	}
+	
+	&.size-3 {
+		font-size: 14px;
+		line-height: 22px;
+		letter-spacing: 0.18px;
+		
+		@include media($lg) {
+			font-size: 17px;
+			line-height: 26px;
+		}
+	}
+}
+
+a {
+	text-decoration: underline;
+}

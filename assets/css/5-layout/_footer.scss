@@ -1,0 +1,23 @@
+.footer {
+	background: $mountain-meadow; /* For browsers that do not support gradients */
+	background: linear-gradient(to right, $mountain-meadow, $purple); /* Standard syntax (must be last) */
+	padding-top: 33px;
+	padding-bottom: 22px;
+	
+	&__logo {
+		width: 196px;
+		height: 130px;
+		margin: 0 auto;
+		display: block;
+		margin-bottom: 35px;
+	}
+	
+	&__copy { 
+		font-size: 14px;
+		line-height: 16px;
+		letter-spacing: 0;
+		color: $white;
+		text-align: center;
+		margin-bottom: 0;
+	}
+}

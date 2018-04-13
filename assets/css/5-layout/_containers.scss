@@ -1,0 +1,757 @@
+
+// START: Hero Section
+// ================================
+.hero {
+	min-height: 563px;
+	height: 66vh;
+	position: relative;
+	text-align: center;
+	display: flex;
+	align-items: flex-end;
+	
+	@include media($lg) {
+		min-height: 685px;
+	}
+	
+	@include media($ieFix) {
+		height: 685px;
+	}
+	
+	
+	.container {
+		margin-bottom: 100px; 
+	}
+	
+	
+	&--home {
+		min-height: 569px;
+		height: 100vh;
+		align-items: center;
+		
+		.container {
+			margin-bottom: 0;
+		}
+		
+		@include media($lg) {
+			min-height: 761px;
+		}
+		
+		@include media($ieFix) {
+			height: 761px;
+		}
+	}
+	
+	&__bg {
+		@include background-element();
+	}
+	
+	&__bg-overlay {
+		@include background-element();
+		background: $black; /* For browsers that do not support gradients */
+    background: linear-gradient(transparent, $black); /* Standard syntax (must be last) */
+    opacity: 0.7;
+	}
+	
+	&__roaming-icon {
+		width: 66px;
+		height: 80px;
+		margin-bottom: 22px;
+		
+		@include media($lg) {
+			width: 82px;
+			height: 100px;
+		}
+	}
+	
+	&__disconnected-icon {
+		width: 50px;
+		height: 50px;
+		margin-bottom: 18px;
+		
+		@include media($lg) {
+			width: 50px;
+			height: 50px;
+		}
+	}
+	
+	&__btn {
+		margin-top: 50px;
+		
+		@include media($lg) {
+			margin-top: 60px;
+		}
+	}
+	
+	._heading { 
+		color: $white;
+	}
+	
+	p {
+		color: $white;
+	}
+	
+	&__text {
+		margin-top: 53px;
+	}
+	
+	&__cta-next {	
+		height: 32px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		
+		&--fixed {
+			position: fixed;
+			bottom: 48px;
+		}
+		
+		&:before {
+			content: ' ';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 6px;
+			background: $purple; /* For browsers that do not support gradients */
+			background: linear-gradient(to right, $purple, $mountain-meadow); /* Standard syntax (must be last) */
+		}
+		
+		&:after {
+			content: ' ';
+			position: absolute;
+			bottom: 6px;
+			background: url($path-image + 'home-hero-cta-next@2x.png') no-repeat;
+			background-size: 102px 25px;
+			width: 102px;
+			height: 25px;
+			left: 50%;
+			margin-left: -51px;
+		}
+		
+		&--disconnected {
+			&:before {
+				background: $purple3;
+			}
+			
+			&:after {
+				background-image: url($path-image + 'home-hero-cta-next-purple@2x.png');
+			}
+		}
+		
+		&--connected {
+			&:before {
+				background: $mountain-meadow2;
+			}
+			
+			&:after {
+				background-image: url($path-image + 'home-hero-cta-next-mountain-meadow@2x.png');
+			}
+		}
+	}
+	
+	&__cta-next-arrow {
+		position: absolute;
+		left: 50%;
+		margin-left: -8px;
+		bottom: 8px;
+		width: 17px;
+		height: 12px;
+		background: url($path-image + 'next-arrow-down.svg') no-repeat;
+		background-size: 17px 12px;
+		z-index: 100;
+		
+		@include bounce-animation-init();
+		@include bounce-animation-run();
+	}
+}
+// END: Hero Section
+// ================================
+
+
+
+
+
+
+// START: Home Intro Section
+// ================================
+
+.home-intro {
+	background: $mountain-meadow; /* For browsers that do not support gradients */
+	background: linear-gradient(to right, $mountain-meadow, $purple); /* Standard syntax (must be last) */
+	padding: 46px 0 40px;
+	
+	@include media($lg) {
+		padding: 130px 0 120px;
+	}
+			
+	p { color: $white; }
+	a { color: $light-blue; }
+}
+
+// END: Home Intro Section
+// ================================
+
+
+
+
+
+
+// START: Country Grid
+// ================================
+
+.country-grid {
+	background: url($path-image + 'country-grid-bg.png') repeat;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	
+	@include media($lg) {
+		padding-top: 60px;
+		padding-bottom: 64px;
+	}
+	
+	.country-grid-legend {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		margin-bottom: 23px;
+		
+		&__item {
+			display: inline-block;
+			font-size: 13px;
+			line-height: 36px;
+			letter-spacing: 0.5px;
+			color: $gray;
+			text-transform: uppercase;
+			font-weight: 600;
+			
+			@include media($lg) {
+				font-size: 15px;
+				line-height: 64px;
+				margin-right: 22px;
+				margin-bottom: 0;
+			}
+		}
+		
+		&__icon {
+			width: 27px;
+			height: 27px;
+			margin-right: 2px;
+		}
+	}
+	
+	.country-grid-item {
+		background: $white;
+		display: block;
+		text-decoration: none;
+		position: relative;
+		margin-bottom: 26px;
+		@include base-transition();
+		
+		@include media($lg) {
+			margin-bottom: 36px;
+		}
+		
+		&:hover {
+			box-shadow: rgba($black, 0.16) 0px 3px 6px;
+		}
+		
+		&__img {
+			height: 250px;
+			width: 100%;
+			position: relative;
+			background-position: center center;
+			background-size: cover;
+			
+			@include media($lg) {
+				height: 346px;
+			}
+		}
+		
+		&__icon {
+			width: 50px;
+			height: 50px;
+			background-size: 50px 50px;
+			background-repeat: no-repeat;
+			position: absolute;
+			bottom: -15px;
+			left: 26px;
+			
+			&--connected {
+				background-image: url($path-image + 'country-connected-icon.svg');
+				
+			}
+			&--disconnected {
+				background-image: url($path-image + 'country-disconnected-icon.svg');
+			}
+		}
+		
+		&__content {
+			padding: 23px 26px 16px;
+			
+			._heading {
+				color: $tundora;
+			}
+			
+			p {
+				color: $mariner;
+				text-transform: uppercase;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// END: Country Grid
+// ================================
+
+
+
+
+// START: Content Wrapper
+// ================================
+
+.content-wrapper {
+	position: relative;
+	background: url($path-image + 'country-grid-bg.png') repeat;
+}
+// END: Content Wrapper
+// ================================
+
+
+
+
+// START: Iconic sites and landscapes
+// ================================
+.landscapes {
+	padding-top: 50px;
+	padding-bottom: 0;
+	overflow: hidden;
+	
+	@include media($lg) {
+		padding-top: 80px;
+		padding-bottom: 10px;
+	}
+	
+	&--disconnected {
+		em { color: $purple; }
+	}
+	
+	&--connected {
+		em { color: $mountain-meadow2; }
+		._heading--5:after { background: $mountain-meadow2; }
+	}
+	
+	&__landscapes-icon {
+		width: 76px;
+		height: 58px;
+		margin-bottom: 22px;
+		
+		@include media($lg) {
+			width: 97px;
+			height: 75px;
+		}
+	}
+	
+	.landscapes-item {
+		background: $white;
+		margin-bottom: 22px;
+		
+		@include media($lg) {
+			margin-bottom: 60px;
+		}
+		
+		&__img {
+			width: 100%;
+			height: 200px;
+			background-position: center center;
+			background-size: cover;
+			
+			@include media($lg) {
+				height: 100%;
+			}
+		}
+		
+		&__content {
+			padding: 28px 15px 22px;
+			
+			@include media($lg) {
+				padding: 48px 48px 33px;
+			}
+		}
+	}
+}
+// END: Iconic sites and landscapes
+// ================================
+
+
+
+
+
+// START: Map
+// ================================
+.map-section {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	@include media($lg) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+	&__map-icon {
+		width: 76px;
+		height: 58px;
+		margin-bottom: 22px;
+		
+		@include media($lg) {
+			width: 105px;
+			height: 85px;
+		}
+	}
+	
+	&__map-area-wrapper {
+		background: $white;
+		position: relative;
+	}
+	
+	
+	.map-legend {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		padding-top: 16px;
+		padding-bottom: 10px;
+		
+		@include media($lg) {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		
+		&__item {
+			display: block;
+			font-size: 13px;
+			line-height: 36px;
+			letter-spacing: 0.5px;
+			color: $gray;
+			text-transform: uppercase;
+			font-weight: 600;
+			
+			@include media($lg) {
+				display: inline-block;
+				font-size: 15px;
+				line-height: 56px;
+				margin-right: 22px;
+				margin-bottom: 0;
+			}
+		}
+		
+		&__icon {
+			width: 27px;
+			height: 27px;
+			margin-right: 2px;
+		}
+	}
+	
+	
+	.map {
+		position: relative;
+		width: 100%;
+		margin: 0 auto;
+		
+		&__overlay {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 460px;
+			background: rgba($tundora, 0.8);
+			z-index: 10;
+			display: none;
+			
+			@include media($md) {
+				display: none !important;
+			}
+			
+			&-icon {
+				background: url($path-image + 'map-overlay-icon.svg') no-repeat;
+				background-size: 16px 16px;
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				bottom: 24px;
+				left: 50%;
+				margin-left: -9px;
+			}
+		}
+		
+		&__main {
+			width: 100%;
+			height: 460px;
+			
+			@include media($lg) {
+				height: 613px;
+			}
+		}
+		
+		&__blue-popup-wrapper {
+			@include media($md) {
+				display: block !important;
+				opacity: 1 !important;
+			}
+		}
+		
+		&__blue-popup {
+			font-size: 15px;
+			line-height: 20px;
+			letter-spacing: 0.5px;
+			font-weight: 600;
+			color: $white;
+			background: $mariner;
+			position: absolute;
+			width: 182px;
+			height: 84px;
+			padding: 22px 30px;
+			bottom: 24px;
+			right: 12px;
+			@include bounce-animation-init();
+			animation-iteration-count: 5;
+			-webkit-animation-iteration-count: 5;
+			
+			
+			@include media($lg) {
+				bottom: 66px;
+				right: 90px;
+			}
+			
+			&--trigger-anim {
+				@include bounce-animation-run();
+			}
+			
+			&:after {
+				content: ' ';
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 12px 10px 0 10px;
+				border-color: $mariner transparent transparent transparent;
+				bottom: -12px;
+				right: 34px;
+			}
+		}
+		
+		
+		
+		.gm-style-iw {
+			width: 300px !important;
+			top: 17px !important;
+			left: 0px !important;
+			background-color: transparent;
+			box-shadow: 0 5px 15px rgba($black, 0.03);
+			border: none;
+			border-radius: 0;
+		}
+		
+		#iw-container {
+			margin-bottom: 0;
+			margin-top:25px;
+			background: $white;
+			padding-bottom: 20px;
+		}
+		
+		.iw-icon {
+			width: 50px;
+			height: 50px;
+			background-repeat: no-repeat;
+			background-size: 50px 50px;
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			margin-left: -25px;
+		}
+		
+		#iw-container .iw-title {
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 18px;
+			letter-spacing: 0.15px;
+			color: $mariner2;
+			background: url($path-image + 'popover-title-icon.svg') no-repeat;
+			background-size: 12px 16px;
+			background-position: left 3px;
+			padding-left: 20px;
+			text-transform: uppercase;
+			margin-bottom: 12px;
+			margin: 21px 25px 2px 25px;
+		}
+		
+		#iw-container .iw-content {
+			font-size: 13px;
+			line-height: 18px;
+			font-weight: 400;
+			margin-right: 1px;
+			padding: 10px 25px 1px 25px;
+			max-height: 140px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			
+			
+			@include media($lg) {
+				max-height: none;
+			}
+			
+			p {
+				font-size: 13px;
+				font-weight: 300;
+				line-height: 22px;
+				letter-spacing: 0;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+		#iw-container .iw-image {
+			height: 178px;
+			background-size: cover;
+			background-position: center center;
+		}
+
+	}
+	
+}
+// END: Map
+// ================================
+
+
+
+
+// START: Pagination
+// ================================
+.pagination {
+	padding-top: 30px;
+	padding-bottom: 71px;
+	
+	@include media($md) {
+		padding-top: 70px;
+		padding-bottom: 112px;
+	}
+	
+	.pagination-item {
+		background: $mountain-meadow;
+		color: $white;
+		display: block;
+		text-decoration: none;
+		position: relative;
+		
+		@include base-transition();
+		
+		&__col {
+			@include media($md) {
+				height: 360px;
+			}
+		}
+		
+		
+		
+		&--disconnected {
+			background: $purple2;
+			
+			&:hover {
+				background: darken($purple2, 8%);
+			}
+		}
+		
+		&--connected {
+			background: $mountain-meadow;
+			
+			&:hover {
+				background: darken($mountain-meadow, 8%);
+			}
+		}
+		
+		
+		
+		&__img {
+			width: 100%;
+			height: 240px;
+			background-size: cover;
+			background-position: center center;
+			opacity: 1;
+			@include base-transition();
+			
+			@include media($md) {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		
+		&:hover {
+			.pagination-item__img { opacity: 0.75; }
+		}
+		
+		&__icon {
+			background: url($path-image + 'pagination-icon.svg') no-repeat;
+			background-size: 24px 35px;
+			width: 24px;
+			height: 35px;
+			display: inline-block;
+			margin-top: 35px;
+			margin-bottom: 8px;
+			
+			@include media($md) {
+				margin-top: 80px;
+				margin-bottom: 8px;
+			}
+		}
+		
+		&__text {
+			font-size: 11px;
+			font-weight: 600;
+			line-height: 16px;
+			letter-spacing: 0.3px;
+			text-transform: uppercase;
+			margin-bottom: 12px;
+			
+			@include media($md) {
+				font-size: 15px;
+				margin-bottom: 26px;
+			}
+		}
+		
+		&__title {
+			font-size: 28px;
+			font-weight: 600;
+			line-height: 39px;
+			letter-spacing: 0.3px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			
+			@include media($md) {
+				font-size: 36px;
+				margin-bottom: 44px;
+			}
+		}
+		
+		&__link {
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 52px;
+			letter-spacing: 0.3px;
+			text-decoration: underline;
+			margin-bottom: 27px;
+			
+			@include media($md) {
+				font-size: 17px;
+				margin-bottom: 0;
+			}
+		}
+		
+		.row {
+			min-height: 360px;
+		}
+	}
+}
+// END: Pagination
+// ================================

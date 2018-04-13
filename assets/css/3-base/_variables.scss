@@ -1,0 +1,59 @@
+//Custom variables
+
+// Descriptive color variables
+
+// Functional color variables
+
+// Font stacks
+
+// Asset paths
+$path-image   :   '../img/';
+$path-fonts     :  '../fonts/';
+
+
+
+
+$primary-font: 'Trueno';
+
+// Breakpoints
+$sm: "(min-width: 576px)";
+$smBelow: "(max-width: 575px)";
+$smOnly: "(min-width: 576px) and (max-width: 767px)";
+
+
+$md: "(min-width: 768px)";
+$mdBelow: "(max-width: 767px)";
+$mdOnly: "(min-width: 768px) and (max-width: 991px)";
+
+$lg: "(min-width: 992px)";
+$lgBelow: "(max-width: 991px)";
+$lgOnly: "(min-width: 992px) and (max-width: 1199px)";
+
+$xl: "(min-width: 1200px)";
+$xlBelow: "(max-width: 1199px)";
+
+$retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+$ieFix: "screen and (-ms-high-contrast: active), (-ms-high-contrast: none)";
+
+
+
+// Colours
+
+$black: #000000;
+$white: #ffffff;
+$gray: #818181;
+$tundora: #414141;
+$cod-gray: #1C1C1C;
+
+$mariner: #3379D1;
+$mariner2: #336CCB;
+$azure: #396eb2;
+
+$purple: #621FCC;
+$purple2: #6425AD;
+$purple3: #873EFD;
+
+$mountain-meadow: #17A37D;
+$mountain-meadow2: #1CC194;
+
+$light-blue: #B7D7FF;

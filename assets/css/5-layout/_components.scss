@@ -1,0 +1,229 @@
+// START: Lazy
+// =====================
+.lazy {
+  display: block;
+   
+  &-preloader {
+	  background-image: url($path-image + 'ajax-loader.gif');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 54px 55px !important;
+  }
+}
+// END: Lazy
+// =====================
+
+
+
+
+// START: Element in View
+// =====================
+.element-in-view {
+	opacity: 0;
+	@include base-transition2();
+	@include transform(translateY(-50px));
+	
+	&--left {
+		@include transform(translateX(-50px));
+	}
+	
+	&--right {
+		@include transform(translateX(50px));
+	}
+	
+	&--delay {
+		-webkit-transition-delay: 1s; /* Safari */
+		transition-delay: 1s;
+	}
+	
+	&--show { 
+		opacity: 1;
+		@include transform(translate(0, 0));
+	}
+	
+	
+}
+// END: Element in view
+// =====================
+
+
+
+
+
+// START: Footer back to top arrow
+// =====================
+.footer-back-to-top {
+	height: 32px;
+	width: 100%;
+	position: absolute;
+	display: block;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	
+	
+	
+	&:before {
+		content: ' ';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 6px;
+		background: $purple3;
+	}
+	
+	&:after {
+		content: ' ';
+		position: absolute;
+		bottom: 6px;
+		background: url($path-image + 'home-hero-cta-next-purple@2x.png') no-repeat;
+		background-size: 102px 25px;
+		width: 102px;
+		height: 25px;
+		left: 50%;
+		margin-left: -51px;
+	}
+	
+	&__arrow-wrapper {
+		position: absolute;
+		left: 50%;
+		margin-left: -8px;
+		bottom: 8px;
+		width: 17px;
+		height: 12px;
+		z-index: 100;
+ 		@include transform(rotate(180deg));
+	}
+	
+	&__arrow {
+		width: 100%;
+		height: 100%;
+		background: url($path-image + 'next-arrow-down.svg') no-repeat;
+		background-size: 17px 12px;
+
+		@include bounce-animation-top-init();
+		
+
+	}
+	
+	&:hover {
+		.footer-back-to-top__arrow {
+			@include bounce-animation-top-run();
+		}
+	}
+	
+	
+	&--connected {
+		&:before {
+			background: $mountain-meadow2;
+		}
+		&:after {
+			background-image: url($path-image + 'home-hero-cta-next-mountain-meadow@2x.png');
+		}
+	}
+}
+// END: Footer back to top arrow
+// =====================
+
+
+
+// START: Popover
+// =====================
+.popover {
+	border: none;
+	border-radius: 0;
+	min-width: 296px;
+	
+	@include media($mdBelow) {
+		max-width: none;
+		left: 10px !important;
+		bottom: 60px;
+    right: 10px;
+    top: auto !important;
+    transform: translate3d(0,0,0) !important;
+    margin: 0 !important;
+    margin-bottom: 0.5rem !important;
+	}
+	
+	.popover-body {
+		padding: 0;
+	}
+	
+	.arrow {
+		&:before { border-color: transparent; }
+		
+		@include media($mdBelow) {
+			left: 50% !important;
+			right: auto !important;
+			margin-left: -9px;
+			top: auto !important;
+			bottom: calc((0.5rem + 1px) * -1);
+			
+			&:before {
+				bottom: 0 !important;
+				border-width: 0.5rem 0.5rem 0 !important;
+			}
+			&:after {
+				border-width: 0.5rem 0.5rem 0 !important;
+				border-top-color: #fff !important;
+				border-left-color: transparent !important;
+				right: auto !important;
+				bottom: -4px !important;
+			}
+			
+		}
+	}
+	
+	.popover-loc-image {
+		display: block;
+		width: 100%;
+		height: 178px;
+		background-size: cover;
+		background-position: center center;
+	}
+	
+	.popover-loc-body {
+		padding: 20px 25px 14px;
+	}
+	
+	.popover-loc-icon {
+		width: 50px;
+		height: 50px;
+		background: url($path-image + 'map-legend-wifi.svg') no-repeat;
+		background-size: 50px 50px;
+		position: absolute;
+		top: -25px;
+		left: 50%;
+		margin-left: -25px;
+		
+		&--wifi { background-image: url($path-image + 'map-legend-wifi.svg') }
+		&--festivals { background-image: url($path-image + 'map-legend-festivals.svg') }
+		&--eat { background-image: url($path-image + 'map-legend-eat.svg') }
+	}
+	
+	.popover-loc-title {
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 18px;
+		letter-spacing: 0.15px;
+		color: $mariner2;
+		background: url($path-image + 'popover-title-icon.svg') no-repeat;
+		background-size: 12px 16px;
+		background-position: left 3px;
+		padding-left: 20px;
+		text-transform: uppercase;
+		margin-bottom: 12px;
+	}
+	
+	.popover-loc-desc {
+		font-size: 13px;
+		font-weight: 300;
+		line-height: 22px;
+		letter-spacing: 0;
+		color: $cod-gray;
+	}
+}
+// END: Popover
+// =====================
